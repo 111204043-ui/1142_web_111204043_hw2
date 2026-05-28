@@ -76,9 +76,9 @@ export default function Home() {
             。
           </p>
           <p className="italic text-zinc-500 border-t border-zinc-800/60 pt-2 font-serif">
-            「本測試將評估您的異常心理特質與現實錨定，以分類您的收容等級。請放心，這一切都是為了您的安全。或者說……為了
+            「本測試將評估您的異常心理特質與現實錨定，以分類您的收容等級。為了您的安全，請不要
             <span className="blur-[1px] text-zinc-400 hover:blur-none transition-all duration-300 cursor-help">
-              不讓世界被您修正
+              掙扎
             </span>
             。」
           </p>

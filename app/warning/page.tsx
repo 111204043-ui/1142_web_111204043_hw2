@@ -21,7 +21,7 @@ export default function Warning() {
         {/* 1. 最上方小字區：加上 break-all 確保黑塊自動折行 */}
         <div className="flex justify-between items-center w-full border-b border-zinc-800 pb-2 gap-2">
           <span className="text-xs tracking-wider text-zinc-500 break-all">
-            █████████████████████████
+            ████████████████████████████████
           </span>
 
           <div className="w-6 h-6 shrink-0 bg-transparent overflow-hidden">
@@ -41,7 +41,7 @@ export default function Warning() {
               textShadow: "2px 0 #991b1b, -1px -1px #1e3a8a"
             }}
           >
-            ███ ████████
+            ███ ███████████████
           </h1>
           <span className="text-[9px] text-zinc-600 block mt-0.5 tracking-widest break-all">
             ████████ ██████ █████████████ ████
@@ -51,10 +51,10 @@ export default function Warning() {
         {/* 3. 小警告標語區：加上 break-all 防止長黑條撐破紅框 */}
         <div className="border border-red-900/60 bg-red-950/20 p-3 text-[11px] text-red-400 leading-relaxed rounded-sm relative break-all">
           <span className="font-bold block mb-1 text-red-500">
-            ██████████████████
+            ████████████████████████████████
           </span>
           <div className="break-all">
-            ███████████████████████████████████████
+            ██████████████████████████████████████████████████████████████████████████████
           </div>
             
           <div className="absolute right-2 bottom-1 text-[8px] text-zinc-700 select-none">
@@ -65,10 +65,10 @@ export default function Warning() {
         {/* 4. 解釋小標題區 */}
         <div className="mt-2 p-4 bg-zinc-950/40 border-l-2 border-red-900 text-zinc-400 text-xs leading-relaxed space-y-3 break-all">
           <p>
-            █████████████████████
+            ███████████████████████████████████████
           </p>
           <p className="italic text-zinc-500 border-t border-zinc-800/60 pt-2 font-serif break-all">
-            ████████████████████████████████████████全人類的安全██████████████████
+            ███████████████████████████████████████████████全人類的安全████████
           </p>
         </div>
 

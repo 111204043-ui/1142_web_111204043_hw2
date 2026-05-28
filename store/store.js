@@ -60,7 +60,7 @@ const questionData = [
           value: 3 
         },
         {
-          text: "峩看見祢在看著峩。峩看見祢在看著峩。",
+          text: "䄉看見祢在看著䄉。䄉看見祢在看著䄉。",
           value: 4 
         }
       ]
@@ -150,10 +150,10 @@ const questionData = [
       ]
     },
     {
-      title: "峩",
+      title: "䄉",
       options:[
         {
-          text: "薈",
+          text: "檜",
           value: 1
         },
         {

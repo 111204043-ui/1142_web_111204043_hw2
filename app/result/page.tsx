@@ -81,7 +81,7 @@ export default function Result() {
       config = {
         level: "Keter",
         title: "「崩塌的現實，擴散中的異常源。」",
-        image: "/keter.png",
+        image: "/safe.png",
         tags: ["#立即收容", "#思維異化", "#高危警戒"],
         description: (
           <p>

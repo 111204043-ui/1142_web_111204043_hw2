@@ -11,9 +11,6 @@ export default function Question() {
   const psyData = usePsyStore((state) => state.psyData);
   const setPsyScore = usePsyStore((state) => state.setScore);
 
-  // 計算目前的精神污染指數（0 ~ 9 級），用來動態影響 UI 驚悚度
-  const pollutionLevel = questionIndex;
-
   // 用於選項的前綴代碼
   const optionPrefix = ["A", "B", "C", "D"];
 
@@ -45,14 +42,14 @@ export default function Question() {
         className={`w-full h-full flex flex-col justify-between font-mono text-zinc-300 select-none`}
         style={{
           // 隨著題數增加，將邊框陰影的發光範圍擴大，模擬終端機過載
-          boxShadow: `inset 0 0 ${pollutionLevel * 5}px rgba(153, 27, 27, ${0.1 + pollutionLevel * 0.05})`
+          boxShadow: `inset 0 0 ${questionIndex * 5}px rgba(153, 27, 27, ${0.1 + questionIndex * 0.05})`
         }}
       >
         
         {/* 頂部狀態列：呈現當前系統監控狀態 */}
         <div className="flex justify-between items-center w-full border-b border-zinc-800/80 pb-3 text-[10px] text-zinc-500 tracking-wider">
           <div className="flex items-center gap-2">
-            <span className={`w-1.5 h-1.5 rounded-full ${pollutionLevel >= 7 ? "bg-red-600 animate-ping" : "bg-emerald-600 animate-pulse"}`}></span>
+            <span className={`w-1.5 h-1.5 rounded-full ${questionIndex >= 7 ? "bg-red-600 animate-ping" : "bg-emerald-600 animate-pulse"}`}></span>
           </div>
           <div>
             <span>[ SECTION: {String(questionIndex + 1).padStart(2, '0')} / 10 ]</span>
@@ -65,17 +62,17 @@ export default function Question() {
           {/* 題號與題目名稱 */}
           <div className="relative">
             {/* 後方淡淡的偽影襯托 */}
-            <span className="absolute -top-4 -left-2 text-[28px] font-black text-zinc-900 select-none">
+            <span className="absolute -top-7 -left-2 text-[30px] font-black text-zinc-700 select-none">
               Q{questionIndex + 1}
             </span>
             
             {/* 實際題目：後半段題目（Q7、Q8等）加入模糊或錯位陰影特效 */}
             <h2 
               className={`text-base font-bold text-zinc-100 leading-relaxed relative z-10 transition-all duration-300 ${
-                pollutionLevel >= 7 ? "tracking-widest filter blur-[0.3px]" : ""
+                questionIndex >= 7 ? "tracking-widest filter blur-[0.5px]" : ""
               }`}
               style={{
-                textShadow: pollutionLevel >= 5 ? `${pollutionLevel - 4}px 0 rgba(153,27,27,0.7)` : "none"
+                textShadow: questionIndex >= 5 ? `${questionIndex - 4}px 0 rgba(153,27,27,0.7)` : "none"
               }}
             >
               <span className="text-red-500/80 mr-1">►</span>
@@ -92,7 +89,7 @@ export default function Question() {
                 className={`w-full text-left p-3.5 text-xs rounded border border-zinc-800/60 bg-zinc-950/40 text-zinc-400 hover:text-zinc-100 transition-all duration-150 relative overflow-hidden group
                   ${
                     // 隨題數推進，選項按鈕的 Hover 效果從紅框轉變為極度壓迫的血紅底色
-                    pollutionLevel >= 6 
+                    questionIndex >= 6 
                     ? "hover:bg-red-950/40 hover:border-red-700/60" 
                     : "hover:bg-zinc-900 hover:border-zinc-700"
                   }
@@ -106,7 +103,7 @@ export default function Question() {
                   
                   {/* 選項內文：最後幾題的選項字體可以加入呼吸燈或模糊效果 */}
                   <span className={`leading-relaxed group-hover:translate-x-0.5 transition-transform duration-150 ${
-                    pollutionLevel >= 8 && idx === 3 ? "text-red-400/80 font-serif font-black" : ""
+                    questionIndex >= 8 && idx === 3 ? "text-red-400/80 font-serif font-black" : ""
                   }`}>
                     {option.text}
                   </span>
@@ -123,12 +120,12 @@ export default function Question() {
         {/* 底部裝飾列：模擬系統底層拋出的數據流（隨題號變化，題目越後面，盲碼或警告代碼越長） */}
         <div className="border-t border-zinc-900 pt-3 flex justify-between items-center text-[9px] text-zinc-600 select-none tracking-widest">
           <div className="truncate max-w-[250px]">
-            {pollutionLevel < 4 && "SYS_STATUS: MONITORING_ACTIVE"}
-            {pollutionLevel >= 4 && pollutionLevel < 7 && "WARNING: COGNITIVE_HAZARD_DETECTED"}
-            {pollutionLevel >= 7 && "CRITICAL: REALITY_WARPING_IN_PROGRESS_"}
+            {questionIndex < 4 && "SYS_STATUS: MONITORING_ACTIVE"}
+            {questionIndex >= 4 && questionIndex < 7 && "WARNING: COGNITIVE_HAZARD_DETECTED"}
+            {questionIndex >= 7 && "CRITICAL: REALITY_WARPING_IN_PROGRESS_"}
           </div>
           <div className="font-mono text-right shrink-0">
-            {pollutionLevel >= 6 ? "[ MEMETIC_OVERLOAD ]" : `HASH_0x${(8421 + questionIndex * 113).toString(16).toUpperCase()}`}
+            {questionIndex >= 6 ? "[ MEMETIC_OVERLOAD ]" : `HASH_0x${(8421 + questionIndex * 113).toString(16).toUpperCase()}`}
           </div>
         </div>
 

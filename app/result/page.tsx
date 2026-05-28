@@ -17,7 +17,7 @@ export default function Result() {
     let config = {
       level: "UNKNOWN",
       title: "數據異常",
-      image: "/levels/corrupted.png",
+      image: "/SCP_Logo.png",
       tags: ["#資料毀損"],
       description: (
         <p>系統無法解析您的心智常數。請即刻向站點安全負責人報告。</p>

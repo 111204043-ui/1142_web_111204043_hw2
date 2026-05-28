@@ -81,7 +81,7 @@ export default function Result() {
       config = {
         level: "Keter",
         title: "「崩塌的現實，擴散中的異常源。」",
-        image: "/safe.png",
+        image: "/keter.png",
         tags: ["#立即收容", "#思維異化", "#高危警戒"],
         description: (
           <p>
@@ -134,10 +134,10 @@ export default function Result() {
     router.push("/");
   }
 
-  function captureScreenshot() {
-    // 截圖功能功能預留位置，後面再補 Component 邏輯
-    console.log("TRIGGER_SCREENSHOT_SEQUENCE");
-  }
+  // function captureScreenshot() {
+  //   // 截圖功能功能預留位置，後面再補 Component 邏輯
+  //   console.log("TRIGGER_SCREENSHOT_SEQUENCE");
+  // }
 
   if (!resultConfig) {
     return <div className="text-xs text-zinc-600 font-mono">LOADING_DOSSIER...</div>;
